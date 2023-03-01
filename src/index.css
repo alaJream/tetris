@@ -65,26 +65,24 @@
 }
 /* Grid Square */
 .grid-square {
-  border-style: solid;
   width: var(--tile-size);
   height: var(--tile-size);
-  border-width: var(--border-width);
-  border-left-color: var(--border-left-color);
-  border-top-color: var(--border-top-color);
-  border-right-color: var(--border-right-color);
-  border-bottom-color: var(--border-bottom-color);
+  border-radius: 4px;
+  grid-gap: 1px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/* Grid Board */
 .grid-board {
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--tile-size));
   grid-gap: 0;
   align-self: flex-start;
-  grid-area: c; /* Assign to grid area c */
+  grid-area: c;
+  grid-gap: 1px; /* Add a gap! */
 }
 
 /* Next Block */
@@ -92,22 +90,23 @@
   display: grid;
   grid-template-columns: repeat(4, var(--tile-size));
   align-self: flex-start;
-  grid-area: l; /* Grid area l left column */
+  grid-area: l;
+  grid-gap: 1px; /* Grid area l left column */
 }
 
-/* Score Board */
+/* score-board */
 .score-board {
   grid-area: r;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1px;
 }
 
 .score-board-button {
   display: block;
   padding: 1em;
-  border-width: 5px;
-  border-top-color: var(--button-color-t);
-  border-left-color: var(--button-color-l);
-  border-right-color: var(--button-color-r);
-  border-bottom-color: var(--button-color-b);
+  background-color: var(--color-0);
+  border: none;
 }
 
 /* App */
